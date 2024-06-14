@@ -133,4 +133,19 @@ public class QuizServiceTests {
 		
 	}
 	
+	/////
+	
+	@Test
+	public void gitUpdateTest(){
+		List<Question> questionList = new ArrayList<>();
+		questionList.add(new Question(1, "健康餐吃啥?", "松阪豬;炸豬排;煎魚;必勝客"//
+				, OptionType.SINGLE_CHOICE.getType(), true));
+		// 去參考CreateReq帶參數的建構方法的排序 name description 開始時間(記得要比系統的時間晚至少一天，不然跑不出來)結束時間
+		// 測試name error
+		CreateOrUpdateReq req = new CreateOrUpdateReq("", "午餐吃啥?", LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 30), //
+				questionList, true);
+		System.out.println("=============");
+		
+	}
+	
 }
